@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Tittle & Icon-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    <!--Tittle & Icon-->
     <title>Agustin Schniepp</title>
     <link rel="shortcut icon" href="icono.ico" type="image/x-icon">
     <!--Style CSS & Normalize-->
@@ -209,7 +208,8 @@
             camera.aspect = newWidth / newHeight;
             camera.updateProjectionMatrix();
             // Look Animation
-            document.addEventListener('mousemove', onDocumentMouseMove, true);
+            if (window.innerWidth > 800) {
+            window.addEventListener('mousemove', onDocumentMouseMove, true);
                 function onDocumentMouseMove(event) {
                     const mouseX = (event.clientX / newWidth) * 1.1 - 1;
                     const mouseY = -(event.clientY / newHeight) * 1.1 + 1;
@@ -219,7 +219,16 @@
                 // Refresh Look
                 model.position.copy(fixedPosition);
                 model.lookAt(lookAtVector);
+            };
         });
+        window.addEventListener('resize', ()=>{
+            const newWidth = miDiv.clientWidth;
+            const newHeight = miDiv.clientHeight;
+            ancho()
+            renderer.setSize(newWidth, newHeight);
+            camera.aspect = newWidth / newHeight;
+            camera.updateProjectionMatrix();
+        })
         miDiv.appendChild(canvas);
   
         // Ilumination
