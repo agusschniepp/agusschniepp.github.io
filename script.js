@@ -8,45 +8,35 @@ import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.119.1/examples
 window.addEventListener('beforeunload', () => {
     window.scrollTo(0,0)
 })
-navmob(false)
 // Nav-bar
 document.addEventListener('scroll',()=>{
     if (scrollY > 5) {
         $('.nav-bar').addClass("sticky");
         $('.nav-bar-mobile').addClass("sticky");
-        navmob(true)
-        
-    }else{
+        document.getElementById('btn-nav').style.display = 'flex'
+    } else {
         $('.nav-bar').removeClass("sticky");
         $('.nav-bar-mobile').removeClass("sticky");
-        navmob(false)
+        document.getElementById('btn-nav').style.display = 'none'
+        splash.style.display = 'none';
     }
 })
 
-function navmob (cons) {
-    if (cons) {
-    document.getElementById('nav-mob').innerHTML = `
-            <nav class="nav-bar-items">
-                <p><i class="fas fa-bars" id="btn-nav"></i></p>
-                <div class="items-logo">
-                    <a href="https://agusschniepp.github.io/"><span class="logo__edit">{</span>As<span class="logo__edit">}</span></a>
-                </div>
-            </nav>
-            <div class="nav-bar-display"></div>
-    `
-    } else {
-        document.getElementById('nav-mob').innerHTML = `
-                <nav class="nav-bar-items">
-                    <div class="items-logo">
-                        <a href="https://agusschniepp.github.io/"><span class="logo__edit">{</span>As<span class="logo__edit">}</span></a>
-                    </div>
-                </nav>
-                <div class="nav-bar-display"></div>
-        ` 
-    }
+
+let splash = document.getElementById('nav-splash')
+splash.style.display = 'none'
+function splashed () {
+        document.getElementById('btn-nav').addEventListener('click',()=>{
+        if (splash.style.display == 'none') {
+            splash.style.display = 'flex';
+        } else if (scrollY < 5){
+            splash.style.display = 'none';
+        } else {
+            splash.style.display = 'none';
+        }
+    })
 }
-
-
+splashed ()
 
 window.addEventListener('DOMContentLoaded', navRezise)
 window.addEventListener('resize', navRezise)
@@ -194,7 +184,6 @@ sr.reveal('.slider', {
     window.addEventListener('mousemove', () => {
         const newWidth = miDiv.clientWidth;
         const newHeight = miDiv.clientHeight;
-        ancho()
         renderer.setSize(newWidth, newHeight);
         camera.aspect = newWidth / newHeight;
         camera.updateProjectionMatrix();
@@ -300,3 +289,4 @@ sr.reveal('.slider', {
             model.scale.z = 7;
         }
     }
+    
