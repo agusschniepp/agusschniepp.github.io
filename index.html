@@ -8,69 +8,22 @@
     <!--Style CSS & Normalize-->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous" ></script>
     <!--Typed animation-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal" defer></script>
 </head>
 <body>
     <section class="main" id="main">
-        <div class="back">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
-            <defs>
-                <linearGradient id="bg">
-                    <stop offset="0%" style="stop-color:rgba(130, 158, 249, 0.06)"></stop>
-                    <stop offset="50%" style="stop-color:rgba(76, 190, 255, 0.6)"></stop>
-                    <stop offset="100%" style="stop-color:rgba(115, 209, 72, 0.2)"></stop>
-                </linearGradient>
-                <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
-        s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
-            </defs>
-            <g>
-                <use xlink:href='#wave' opacity=".3">
-                    <animateTransform
-              attributeName="transform"
-              attributeType="XML"
-              type="translate"
-              dur="10s"
-              calcMode="spline"
-              values="270 230; -334 180; 270 230"
-              keyTimes="0; .5; 1"
-              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-              repeatCount="indefinite" />
-                </use>
-                <use xlink:href='#wave' opacity=".6">
-                    <animateTransform
-              attributeName="transform"
-              attributeType="XML"
-              type="translate"
-              dur="8s"
-              calcMode="spline"
-              values="-270 230;243 220;-270 230"
-              keyTimes="0; .6; 1"
-              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-              repeatCount="indefinite" />
-                </use>
-                <use xlink:href='#wave' opacty=".9">
-                    <animateTransform
-              attributeName="transform"
-              attributeType="XML"
-              type="translate"
-              dur="6s"
-              calcMode="spline"
-              values="0 230;-140 200;0 230"
-              keyTimes="0; .4; 1"
-              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-              repeatCount="indefinite" />
-                </use>
-            </g>
-        </svg>
+        <div class="back" id="back">
         </div>
         <!--Navegation-bar-->
-        <div class="nav-bar">
+        <div class="nav-bar" id="nav">
                 <nav class="nav-bar-items">
                     <div class="items-logo">
-                        <a href="https://agusschniepp.github.io/"><span class="logo__edit">{</span>As<span class="logo__edit">}</span></a>
+                        <a translate="no" href="https://agusschniepp.github.io/"><span translate="no" class="logo__edit">{</span>As<span translate="no" class="logo__edit">}</span></a>
                     </div>
                     <div class="items-links">
                         <a href="#main">Home</a>
@@ -79,68 +32,21 @@
                     </div>
                 </nav>
         </div>
+        <!--Navegation-bar-Mobile-->
+        <div class="nav-bar-mobile" id="nav-mob"></div>
         <!--Introduction-->
         <div class="introduction">
             <div class="introduction__greetings">Hello, my name is</div>
             <div class="introduction__name">Agustin Schniepp</div>
-            <div class="introduction__me">And I'm a <span class="introduction__me-animation"></span></div>
+            <div class="introduction__me">And I'm a <span translate="no" class="introduction__me-animation"></span></div>
         </div>
         <div class="obj" id="obj">
 
         </div>
     </section>
     <section class="about" id="about">
-        <div class="back-2">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
-            <defs>
-                <linearGradient id="bg">
-                    <stop offset="0%" style="stop-color:rgba(130, 158, 249, 0.06)"></stop>
-                    <stop offset="50%" style="stop-color:rgba(76, 190, 255, 0.6)"></stop>
-                    <stop offset="100%" style="stop-color:rgba(115, 209, 72, 0.2)"></stop>
-                </linearGradient>
-                <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
-        s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
-            </defs>
-            <g>
-                <use xlink:href='#wave' opacity=".3">
-                    <animateTransform
-              attributeName="transform"
-              attributeType="XML"
-              type="translate"
-              dur="10s"
-              calcMode="spline"
-              values="270 230; -334 180; 270 230"
-              keyTimes="0; .5; 1"
-              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-              repeatCount="indefinite" />
-                </use>
-                <use xlink:href='#wave' opacity=".6">
-                    <animateTransform
-              attributeName="transform"
-              attributeType="XML"
-              type="translate"
-              dur="8s"
-              calcMode="spline"
-              values="-270 230;243 220;-270 230"
-              keyTimes="0; .6; 1"
-              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-              repeatCount="indefinite" />
-                </use>
-                <use xlink:href='#wave' opacty=".9">
-                    <animateTransform
-              attributeName="transform"
-              attributeType="XML"
-              type="translate"
-              dur="6s"
-              calcMode="spline"
-              values="0 230;-140 200;0 230"
-              keyTimes="0; .4; 1"
-              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
-              repeatCount="indefinite" />
-                </use>
-            </g>
-        </svg>
+        <div class="back-2" id="back-2">
+            
         </div>
         <div class="about__tittle">
             <div class="about__tittle-active">About me</div>
@@ -151,8 +57,8 @@
             </div>
         </div>
         <div class="about__me">
-            <div class="about__me-tittle">I'm Agustin and i'm a <span class="about__me-animation"></span></div>
-            <p class="about__me-paragraph">My name is Agustín, I am an avionics technician graduated from INAC-CIATA and an IT development student with training in educational companies such as CISCO and PLATZI. I am passionate about computing and software development, that is why I enjoy it and am open to learning new things every day.</p>
+            <div class="about__me-tittle">I'm Agustin and i'm a <span translate="no" class="about__me-animation"></span></div>
+            <p class="about__me-paragraph">My name is Agustin, I am a graduate avionics technician from INAC-CIATA and currently a university student majoring in Computer Science at UBA. In addition, I have a solid background in IT development thanks to educational companies such as CISCO and PLATZI, where I constantly nourish and expand my knowledge. I am passionate about computer science and software development, which is why I find joy in it and remain open to learning new things every day.</p>
         </div>
         <!--Button CV-->
         <a href="#" class="btn-cv">Download CV</a>
@@ -180,124 +86,7 @@
             <button id="prev"><</button>
         </div>
     </section>
-    <script src="script.js"></script>
-    <script type="module">
-        
-        // Imports
-        import * as THREE from 'https://unpkg.com/three@0.119.1/build/three.module.js';
-        import { OrbitControls } from 'https://unpkg.com/three@0.119.1/examples/jsm/controls/OrbitControls.js';
-        import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/loaders/GLTFLoader.js"
-        
-        // ID Canvas
-        const miDiv = document.getElementById('obj');
-        
-        // Render ecena
-        const camera = new THREE.PerspectiveCamera(75, miDiv.clientWidth / miDiv.clientHeight, 0.1, 1000);
-        camera.position.z = 5;
-        const scene = new THREE.Scene();
-        
-        // Resize 
-        const renderer = new THREE.WebGLRenderer({alpha : true});
-        const canvas = renderer.domElement;
-        renderer.setSize(miDiv.clientWidth, miDiv.clientHeight);
-        window.addEventListener('mousemove', () => {
-            const newWidth = miDiv.clientWidth;
-            const newHeight = miDiv.clientHeight;
-            ancho()
-            renderer.setSize(newWidth, newHeight);
-            camera.aspect = newWidth / newHeight;
-            camera.updateProjectionMatrix();
-            // Look Animation
-            if (window.innerWidth > 800) {
-            window.addEventListener('mousemove', onDocumentMouseMove, true);
-                function onDocumentMouseMove(event) {
-                    const mouseX = (event.clientX / newWidth) * 1.1 - 1;
-                    const mouseY = -(event.clientY / newHeight) * 1.1 + 1;
-                    lookAtVector.set(mouseX, mouseY, 0.5);
-                }
-                //NOTE: FIX ERROR; PAUSE ANIMATION WHEN PAGE ARE NOT LOOKING
-                // Refresh Look
-                model.position.copy(fixedPosition);
-                model.lookAt(lookAtVector);
-            };
-        });
-        window.addEventListener('resize', ()=>{
-            const newWidth = miDiv.clientWidth;
-            const newHeight = miDiv.clientHeight;
-            ancho()
-            renderer.setSize(newWidth, newHeight);
-            camera.aspect = newWidth / newHeight;
-            camera.updateProjectionMatrix();
-        })
-        miDiv.appendChild(canvas);
-  
-        // Ilumination
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-        scene.add(ambientLight)
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 2.5);
-        directionalLight.position.set(0, 1, 1).normalize();
-        scene.add(directionalLight);
-        directionalLight.castShadow = true;
-        
-        // 3D Model
-        const duck = new URL('./mapachesito.glb', import.meta.url)
-        let model;
-        
-        // Vector 3D Object position
-        const fixedPosition = new THREE.Vector3(0, 0, 0); 
-        const lookAtVector = new THREE.Vector3(); 
-        
-        // Add 3D Model
-        const assetLoader = new GLTFLoader();
-
-        assetLoader.load(duck.href, (gltf)=>{
-            model = gltf.scene;
-            scene.add(model);
-            ancho()
-            model.position.set(0,0,0);
-            
-            // Add Animations
-            const animate = () => {
-
-                // Levitation
-                requestAnimationFrame(animate);
-                if (model) {
-                    model.position.y = Math.sin(Date.now() * 0.001) * .2;
-                }
-
-                
-                
-                // Render scene
-                renderer.render(scene, camera);
-            };
-
-            animate();
-
-        }, undefined, function(error) {
-            console.error(error);
-        });
-
-        // Animate
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-        
-        animate();
-
-        // Object Responsive
-        function ancho(){
-            if (window.innerWidth < 600) {
-                model.scale.y = 5;
-                model.scale.x = 5;
-                model.scale.z = 5;
-            } else {
-                model.scale.y = 7;
-                model.scale.x = 7;
-                model.scale.z = 7;
-            }
-        }
-
-      </script>
+    <script src="script.js" type="module" defer></script>
+    <script src="assets.js" defer ></script>
 </body>
 </html>
